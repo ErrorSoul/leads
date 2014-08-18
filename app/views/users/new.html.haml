@@ -1,0 +1,59 @@
+.container{"ng-controller" => 'CreateUserCtrl'}
+  .row
+    %header.col-md-12.center-block
+      
+    .col-md-12.center-block
+      .col-md-8.center-block
+
+        .col-md-12.h1
+          %h1.center-block
+            Регистрация
+        %form.form-horizontal{'role'=>'form'}
+        
+          .form-group
+            %label.col-sm-4.control-label{'for'=>'inputFirstName'}
+              Имя
+            .col-sm-6
+              %input#inputFirstName.input-lg.form-control{'type'=>'text', 'placeholder'=>'Ваше имя'}
+          .form-group
+            %label.col-sm-4.control-label{'for'=>'inputEmail'}
+              Фамилия
+            .col-sm-6
+              %input#inputLastName.input-lg.form-control{'type'=>'text', 'placeholder'=>'Ваша фамилия'}
+          .form-group
+            %label.col-sm-4.control-label{'for'=>'inputEmail'}
+              EMAIL
+            .col-sm-6
+              %input#inputEmail.input-lg.form-control{'type'=>'email', 'placeholder'=>'email'}
+          .form-group
+            %label.col-sm-4.control-label{'for'=>'inputEmail'}
+              Дата рождения
+            .col-sm-6
+              .row
+                .col-sm-4
+                
+                  %select.input-lg.form-control{'type'=>'email', 'placeholder'=>'email'}
+                    %option{'ng-repeat'=>'day in days'}
+                      {{day}}
+                .col-sm-4
+                  .row
+                    %select.input-lg.form-control{'type'=>'email', 'placeholder'=>'email'}
+                      %option{'ng-repeat'=>'month in months'}
+                        {{month}}
+                .col-sm-4
+                  .row
+                    %select.input-lg.form-control{'type'=>'email', 'placeholder'=>'email'}
+                      %option{'ng-repeat'=>' year in years'}
+                        {{year}}
+             
+
+          .form-group
+            %label.col-sm-4.control-label{'for'=>'inputFirstName'}
+              Пароль
+            .col-sm-6
+              %input#inputFirstName.input-lg.form-control{'type'=>'password', 'placeholder'=>'Пароль'}
+           
+
+
+
+
