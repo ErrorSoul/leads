@@ -1,9 +1,17 @@
 @import "variables";
-@import "bootstrap";
 @import "bootstrap-sprockets";
+@import "bootstrap";
+
 @import url(http://fonts.googleapis.com/css?family=Ubuntu&subset=cyrillic-ext,latin);
 @import url(http://fonts.googleapis.com/css?family=Comfortaa&subset=cyrillic-ext,latin);
 
+
+
+@mixin box-shadow($shadows...) {
+  -moz-box-shadow: $shadows;
+  -webkit-box-shadow: $shadows;
+  box-shadow: $shadows;
+}
 @mixin center-block {
   float: none;
   display: block;
@@ -11,19 +19,28 @@
   margin-right: auto;
 }
 
+
+
 .form-control {
     border: 0px solid #617992;
     border-left: 5px solid #617992;
     border-bottom: 5px solid #617992;
-    box-shadow: -5px 5px 1px #7f7888;
+    @include box-shadow(-5px 5px 1px #7f7888);
     //box-shadow: none;
 }
 h1{
     text-align: center;
-    font-family: 'Comfortaa', cursive;
+    //font-family: 'Comfortaa', cursive;
    
 }
 
+.day{
+  //text-align: center;
+  font-size: 10px;
+  }
+.date-select{
+  padding: 0;
+  }
 
 header {
   height: 100px;
@@ -34,4 +51,40 @@ header {
   }
 
 
- 
+button {
+  height: 100px;
+  color: #333;
+  @include box-shadow(-5px 5px 1px #7f7888);
+}
+
+button:focus,
+button:active,
+button:hover,
+
+{
+ outline:0px !important;
+    -webkit-appearance:none;
+    
+
+}
+
+.btn:active{
+  border-color: $green-background;
+background-color: $green-background;
+
+
+}
+
+.btn:disabled {
+  background-color: $btn-primary-bg;
+  @include box-shadow(-5px 5px 1px #7f7888);
+  }
+
+
+select.ng-valid.ng-dirty,
+input.ng-valid.ng-dirty {
+  border-top-color: white;
+  @include box-shadow(-5px 5px 1px #7f7888);
+}
+
+
