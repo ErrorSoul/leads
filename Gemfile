@@ -32,6 +32,15 @@ group :doc do
 end
 
 
+
+group :test do
+
+  gem "pry"
+  
+ 
+  gem 'factory_girl_rails'
+  
+end
 group :development do
   
 
