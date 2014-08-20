@@ -2,7 +2,13 @@
   .row
     %header.col-md-12.center-block
       
+      
     .col-md-12.center-block
+      .col-md-2
+        .row
+          %ul{'ng-show' => "showMessage"}
+            %li{'ng-repeat' => 'message in messages'}
+              {{message}}
       .col-md-8.center-block
 
         .col-md-12.h1
@@ -17,7 +23,7 @@
               %input#inputFirstName.input-lg.form-control{'type'=>'text', 
                                                            'placeholder'=>'Ваше имя' ,
                                                            'name'=>"firstname",
-                                                           "ng-model" => "user.firstname",
+                                                           "ng-model" => "user.first_name",
                                                            "ng-minlength" =>"3",
                                                            'required'=>true}
           
@@ -27,7 +33,7 @@
               Фамилия
             .col-md-6
               %input#inputLastName.input-lg.form-control{'type'=>'text', 'placeholder'=>'Ваша фамилия', 
-                                                          "ng-model"=>'user.lastname',"ng-minlength" =>"3",
+                                                          "ng-model"=>'user.last_name',"ng-minlength" =>"3",
                                                           'required'=>true, 'name'=>'lastname'}
 
             
@@ -37,7 +43,7 @@
               EMAIL
             .col-md-6
               %input#inputEmail.input-lg.form-control{'type'=>'email', 'placeholder'=>'email', 
-                                                          "ng-model"=>'user.lastna',"ng-minlength" =>"5",
+                                                          "ng-model"=>'user.email',"ng-minlength" =>"5",
                                                           'required'=>true, 'name'=>'email',
                                                           'ng-pattern'=>"EMAIL_REGEXP" }
            
@@ -98,7 +104,9 @@
                 %button.btn.btn-primary.btn-lg{'type'=>'submit', "ng-disabled"=>"form.$invalid"}
                   CheChen
 
-
+      .col-md-2
+        %h1 
+          TTTTT
 
 
 
