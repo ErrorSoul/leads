@@ -7,7 +7,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      #@user.delay.mess
+      @user.delay.mess
       render json: { message: ["registration complete"]}
     else
       render json: {message: @user.errors.full_messages}

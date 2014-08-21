@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
 
 
 
-=begin
+
   def mess
       require 'uri'
       require "net/http"
@@ -23,7 +23,7 @@ class User < ActiveRecord::Base
          puts '###' * 10  
       end 
   end
-=end
+
 
 
   def sites 
