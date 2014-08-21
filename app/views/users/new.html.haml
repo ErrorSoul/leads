@@ -4,11 +4,12 @@
       
       
     .col-md-12.center-block
-      .col-md-2
+      .col-md-3
         .row
-          %ul{'ng-show' => "showMessage"}
-            %li{'ng-repeat' => 'message in messages'}
+          %div.bg-success{'ng-show' => "showMessage", 'ng-repeat' => 'message in messages'}
+            %p.message
               {{message}}
+             
       .col-md-8.center-block
 
         .col-md-12.h1
@@ -104,9 +105,7 @@
                 %button.btn.btn-primary.btn-lg{'type'=>'submit', "ng-disabled"=>"form.$invalid"}
                   CheChen
 
-      .col-md-2
-        %h1 
-          TTTTT
+      
 
 
 

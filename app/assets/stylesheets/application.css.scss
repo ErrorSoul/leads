@@ -1,6 +1,7 @@
+
 @import "variables";
-@import "bootstrap-sprockets";
 @import "bootstrap";
+
 
 @import url(http://fonts.googleapis.com/css?family=Ubuntu&subset=cyrillic-ext,latin);
 @import url(http://fonts.googleapis.com/css?family=Comfortaa&subset=cyrillic-ext,latin);
@@ -54,6 +55,7 @@ header {
 button {
   height: 100px;
   color: #333;
+  
   @include box-shadow(-5px 5px 1px #7f7888);
 }
 
@@ -67,7 +69,7 @@ button:hover,
     
 
 }
-
+.btn {border-radius: 26px;}
 .btn:active{
   border-color: $green-background;
 background-color: $green-background;
@@ -80,7 +82,9 @@ background-color: $green-background;
   @include box-shadow(-5px 5px 1px #7f7888);
   }
 
-
+.message {
+  text-align: center;
+  }
 select.ng-valid.ng-dirty,
 input.ng-valid.ng-dirty {
   border-top-color: white;

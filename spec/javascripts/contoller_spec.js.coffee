@@ -25,6 +25,6 @@ describe "CreateUserCtrl", ->
         @scope.user = @user
         @scope.login()
         @httpBackend.flush()
-        expect(@scope.messages).toEqual('registration complete')
+        expect(@scope.messages).toEqual(["Регистрация завершена"])
   
              

@@ -48,8 +48,20 @@ leads.controller("CreateUserCtrl", ['$scope','Dater','$http', ($scope, Dater, $h
   $scope.login = () ->
     $scope.user.birthdate = Dater.create_utc_date($scope.user.date)
     $http.post('/users', user: $scope.user).success((data) ->
-      $scope.messages = data.message
+      messageUpdater(data.message)
       console.log(data))
-          .error((error) -> console.log(error))
-  
+          .error((error) ->
+            console.log(error, "ERROR")
+            $scope.y = "Error #{error}" )
+
+  messageUpdater = (message) ->
+    responses = {}
+    email_been_taken = ["Email has already been taken"]
+    registration_complete = ["registration complete"]
+    responses[email_been_taken] = ["Такой пользователь уже есть"]
+    responses[registration_complete] = ["Регистрация завершена"]
+    $scope.messages = (if responses[message] then responses[message] else message)
+    
+    
+      
 ] )

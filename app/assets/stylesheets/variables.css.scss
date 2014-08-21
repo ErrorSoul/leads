@@ -2,7 +2,7 @@
 $green-background: #ABC147;
 $green: #BDF1C0;
 
-$border-radius-base: 0px;
+$input-border-radius: 16px !important;
 
 
 $input-border-focus:#FFCBE6 ;
@@ -11,5 +11,4 @@ $font-family-sans-serif: 'Comfortaa', cursive;
 
 $btn-primary-bg: #617992;
 
-$state-success-text: $green-background;
-
+$state-success-text: $green-background; 
