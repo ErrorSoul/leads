@@ -1,4 +1,4 @@
-require "pry"
+
 class User < ActiveRecord::Base
   before_save { self.email = email.downcase }
   validates :first_name, :last_name, :country, :birthdate,  presence: true
