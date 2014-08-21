@@ -11,12 +11,15 @@
               {{message}}
              
       .col-md-8.center-block
+        
+        
+
 
         .col-md-12.h1
           %h1.center-block
             Регистрация
         %form.form-horizontal{'role'=>'form', 'name'=>'form', :novalidate => true, "ng-submit" => "form.$valid && login()"}
-        
+
           .form-group{'ng-class'=>"{true: 'has-success'}[form.firstname.$valid]"}
             %label.col-sm-4.control-label{'for'=>'inputFirstName'}
               Имя
@@ -27,7 +30,7 @@
                                                            "ng-model" => "user.first_name",
                                                            "ng-minlength" =>"3",
                                                            'required'=>true}
-          
+
 
           .form-group{'ng-class'=>"{true: 'has-success'}[form.lastname.$valid]"}
             %label.col-sm-4.control-label{'for'=>'inputLastName'}
@@ -37,8 +40,8 @@
                                                           "ng-model"=>'user.last_name',"ng-minlength" =>"3",
                                                           'required'=>true, 'name'=>'lastname'}
 
-            
-          
+
+
           .form-group{'ng-class'=>"{true: 'has-success'}[form.email.$valid]"}
             %label.col-sm-4.control-label{'for'=>'inputEmail'}
               EMAIL
@@ -47,7 +50,7 @@
                                                           "ng-model"=>'user.email',"ng-minlength" =>"5",
                                                           'required'=>true, 'name'=>'email',
                                                           'ng-pattern'=>"EMAIL_REGEXP" }
-           
+
 
 
                                                      
