@@ -22,3 +22,5 @@ class UsersController < ApplicationController
       params.require(:user).permit(:first_name, :last_name, :birthdate, :email, :country, :password)
     end
 end
+
+

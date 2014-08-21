@@ -20,12 +20,14 @@
   margin-right: auto;
 }
 
-
+@mixin border-color($radius) {
+  border-left: $radius solid $blue-border;
+  border-bottom: $radius solid $blue-border;
+  }
 
 .form-control {
-    border: 0px solid #617992;
-    border-left: 5px solid #617992;
-    border-bottom: 5px solid #617992;
+    border: 0px solid ;
+    @include border-color(5px);
     @include box-shadow(-5px 5px 1px #7f7888);
     //box-shadow: none;
 }
@@ -72,7 +74,8 @@ button:hover,
 .btn {border-radius: 26px;}
 .btn:active{
   border-color: $green-background;
-background-color: $green-background;
+  background-color: $green-background;
+  
 
 
 }
