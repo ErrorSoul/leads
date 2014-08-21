@@ -1,0 +1,107 @@
+<div class='container' ng-controller='CreateUserCtrl'>
+  <div class='row'>
+    <header class='col-md-12 center-block'></header>
+    <div class='col-md-12 center-block'>
+      <div class='col-md-3'>
+        <div class='row'>
+          <div class='bg-success' ng-repeat='message in messages' ng-show='showMessage'>
+            <p class='message'>
+              {{message}}
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class='col-md-8 center-block'>
+        <div class='col-md-12 h1'>
+          <h1 class='center-block'>
+            Регистрация
+          </h1>
+        </div>
+        <form class='form-horizontal' name='form' ng-submit='form.$valid &amp;&amp; login()' novalidate role='form'>
+          <div class='form-group' ng-class="{true: 'has-success'}[form.firstname.$valid]">
+            <label class='col-sm-4 control-label' for='inputFirstName'>
+              Имя
+            </label>
+            <div class='col-sm-6'>
+              <input class='input-lg form-control' id='inputFirstName' name='firstname' ng-minlength='3' ng-model='user.first_name' placeholder='Ваше имя' required type='text'>
+            </div>
+          </div>
+          <div class='form-group' ng-class="{true: 'has-success'}[form.lastname.$valid]">
+            <label class='col-sm-4 control-label' for='inputLastName'>
+              Фамилия
+            </label>
+            <div class='col-md-6'>
+              <input class='input-lg form-control' id='inputLastName' name='lastname' ng-minlength='3' ng-model='user.last_name' placeholder='Ваша фамилия' required type='text'>
+            </div>
+          </div>
+          <div class='form-group' ng-class="{true: 'has-success'}[form.email.$valid]">
+            <label class='col-sm-4 control-label' for='inputEmail'>
+              EMAIL
+            </label>
+            <div class='col-md-6'>
+              <input class='input-lg form-control' id='inputEmail' name='email' ng-minlength='5' ng-model='user.email' ng-pattern='EMAIL_REGEXP' placeholder='email' required type='email'>
+            </div>
+          </div>
+          <div class='form-group' ng-class="{true: 'has-success'}[form.country.$valid]">
+            <label class='col-sm-4 control-label' for='inputCountry'>
+              Страна
+            </label>
+            <div class='col-md-6'>
+              <select class='input-lg form-control' id='inputCountry' name='country' ng-model='user.country' placeholder='страна' required type='country'>
+                <option ng-repeat='country in countries' value='{{country.code}}'>
+                  {{country.name}}
+                </option>
+              </select>
+            </div>
+          </div>
+          <div class='form-group' id='date' ng-class="{true: 'has-success'}[form.day.$valid &amp;&amp; form.month.$valid &amp;&amp; form.year.$valid]">
+            <label class='col-sm-4 control-label'>
+              Дата рождения
+            </label>
+            <div class='col-md-6'>
+              <div class='col-md-3 date-select day'>
+                <select class='input-lg form-control' name='day' ng-model='user.date.day' required>
+                  <option ng-repeat='day in days'>
+                    {{day}}
+                  </option>
+                </select>
+              </div>
+              <div class='col-md-5 date-select'>
+                <select class='input-lg form-control' name='month' ng-model='user.date.month' required>
+                  <option ng-repeat='month in months' value='{{month.value}}'>
+                    {{month.month_name}}
+                  </option>
+                </select>
+              </div>
+              <div class='col-md-4 date-select'>
+                <select class='input-lg form-control' name='year' ng-model='user.date.year' required>
+                  <option ng-repeat=' year in years'>
+                    {{year}}
+                  </option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class='form-group' ng-class="{true: 'has-success'}[form.password.$valid]">
+            <label class='col-md-4 control-label' for='inputPassword'>
+              Пароль
+            </label>
+            <div class='col-md-6'>
+              <input class='input-lg form-control' id='inputPassword' name='password' ng-minlength='6' ng-model='user.password' placeholder='Как минимум 6 символов' required type='password'>
+            </div>
+          </div>
+          <div class='form-group'>
+            <label class='col-md-4 control-label'></label>
+            <div class='col-md-6 col-md-push-4'>
+              <div class='row'>
+                <button class='btn btn-primary btn-lg' ng-disabled='form.$invalid' type='submit'>
+                  CheChen
+                </button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
