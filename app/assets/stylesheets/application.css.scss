@@ -82,6 +82,7 @@ button:hover,
 
 .btn:disabled {
   background-color: $btn-primary-bg;
+  color: $btn-primary-bg;
   @include box-shadow(-5px 5px 1px #7f7888);
   }
 
