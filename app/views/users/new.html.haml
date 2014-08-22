@@ -1,6 +1,7 @@
 .container{"ng-controller" => 'CreateUserCtrl'}
   .row
     %header.col-md-12.center-block
+      %h1 Увеличь свои шансы на успех в поисках второй половинки.
       
       
     .col-md-12.center-block
@@ -23,7 +24,7 @@
           .form-group{'ng-class'=>"{true: 'has-success'}[form.firstname.$valid]"}
             %label.col-sm-4.control-label{'for'=>'inputFirstName'}
               Имя
-            .col-sm-6
+            .col-md-6
               %input#inputFirstName.input-lg.form-control{'type'=>'text', 
                                                            'placeholder'=>'Ваше имя' ,
                                                            'name'=>"firstname",

@@ -27,18 +27,18 @@ class User < ActiveRecord::Base
 
 
   def sites 
-    anas_url = "http://api.anastasiadate.com/member/register/?clientside-id=1407921784254927&afid=20068&subafid=18957&source=anastasiadate.us&current-language=&offer-id=28&transaction-id=1022118b4fb6bccc323e31af5d428b"
-    anas_data = {"afid" => "20068", 
-                 "subafid" => "18957", 
-                 "current-language" => "",
-                 "family-coregistration" => true
+    anas_url = "http://api.anastasiadate.com/member/register/?clientside-id=&afid=&subafid=&source=anastasiadate.us&current-language=&offer-id=&transaction-id="
+    anas_data = {"afid" => "", 
+                 "subafid" => "", 
+                 "current-language" => ""
+                 
                 }
     anastasiadate =[anas_url,  anas_data]
     
-    braz_url = "http://api.amolatina.com/member/register/?clientside-id=1407937161864975&afid=20103&subafid=18957&source=braziliawomen.com&current-language=&offer-id=38&transaction-id=102066a33777779b554dda87f14f84"
-    braz_data = {"afid" => "20103",
-                 "subafid" => "18957",
-                 "family-coregistration" => true
+    braz_url = "http://api.amolatina.com/member/register/?clientside-id=&afid=&subafid=&source=braziliawomen.com&current-language=&offer-id=&transaction-id="
+    braz_data = {"afid" => "",
+                 "subafid" => ""
+                 
                 }
     braziliawomen = [braz_url, braz_data]
 
@@ -52,6 +52,7 @@ class User < ActiveRecord::Base
     
 
     sites = [anastasiadate, braziliawomen, asiadate]
+    #sites = [anastasiadate]
     attrs = [:country, :email, :password]
     sites.map  do |site|
       site = site.last
