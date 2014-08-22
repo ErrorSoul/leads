@@ -1,0 +1,107 @@
+.container{"ng-controller" => 'CreateUserCtrl'}
+  .row
+    %header.col-md-12.center-block
+      %h1 Увеличь свои шансы на успех в поисках второй половинки.
+      
+<<<<<<< HEAD
+      
+    .col-md-12.center-block
+      .col-md-3
+        .row
+          %div.bg-success{'ng-show' => "showMessage", 'ng-repeat' => 'message in messages'}
+            %p.message
+              {{message}}
+             
+      .col-md-8.center-block
+        
+        
+
+
+        .col-md-12.h1
+          %h1.center-block
+            Регистрация
+        %form.form-horizontal{'role'=>'form', 'name'=>'form', :novalidate => true, "ng-submit" => "form.$valid && login()"}
+
+          .form-group{'ng-class'=>"{true: 'has-success'}[form.firstname.$valid]"}
+            %label.col-sm-4.control-label{'for'=>'inputFirstName'}
+              Имя
+            .col-md-6
+              %input#inputFirstName.input-lg.form-control{'type'=>'text', 
+                                                           'placeholder'=>'Ваше имя' ,
+                                                           'name'=>"firstname",
+                                                           "ng-model" => "user.first_name",
+                                                           "ng-minlength" =>"3",
+                                                           'required'=>true}
+
+
+          .form-group{'ng-class'=>"{true: 'has-success'}[form.lastname.$valid]"}
+            %label.col-sm-4.control-label{'for'=>'inputLastName'}
+              Фамилия
+            .col-md-6
+              %input#inputLastName.input-lg.form-control{'type'=>'text', 'placeholder'=>'Ваша фамилия', 
+                                                          "ng-model"=>'user.last_name',"ng-minlength" =>"3",
+                                                          'required'=>true, 'name'=>'lastname'}
+
+
+
+          .form-group{'ng-class'=>"{true: 'has-success'}[form.email.$valid]"}
+            %label.col-sm-4.control-label{'for'=>'inputEmail'}
+              EMAIL
+            .col-md-6
+              %input#inputEmail.input-lg.form-control{'type'=>'email', 'placeholder'=>'email', 
+                                                          "ng-model"=>'user.email',"ng-minlength" =>"5",
+                                                          'required'=>true, 'name'=>'email',
+                                                          'ng-pattern'=>"EMAIL_REGEXP" }
+
+
+
+                                                     
+                                                     
+                                                      
+                                                      
+                                                      
+                                                      
+
+          .form-group{'ng-class'=>"{true: 'has-success'}[form.country.$valid]"}
+            %label.col-sm-4.control-label{'for'=>'inputCountry'}
+              Страна
+            .col-md-6
+              %select#inputCountry.input-lg.form-control{'type'=>'country', 'placeholder'=>'страна','required' => true,
+                                                          'name' => 'country', 'ng-model' => 'user.country'}
+                %option{"ng-repeat"=>'country in countries', "value"=>"{{country.code}}"}
+                  {{country.name}}
+          
+
+          .form-group#date{'ng-class'=>"{true: 'has-success'}[form.day.$valid && form.month.$valid && form.year.$valid]"}
+            %label.col-sm-4.control-label
+              Дата рождения
+            .col-md-6
+              .col-md-3.date-select.day
+
+                %select.input-lg.form-control{'name' => 'day', 'ng-model' => 'user.date.day', 'required' => true}
+                  %option{'ng-repeat'=>'day in days'}
+                    {{day}}
+              .col-md-5.date-select
+    
+                %select.input-lg.form-control{'name' => 'month', 'ng-model' => 'user.date.month', 'required' => true}
+                  %option{'ng-repeat'=>'month in months', 'value'=>'{{month.value}}'}
+                    {{month.month_name}}
+              .col-md-4.date-select
+    
+                %select.input-lg.form-control{'name' => 'year', 'ng-model' => 'user.date.year', 'required' => true}
+                  %option{'ng-repeat'=>' year in years'}
+                    {{year}}
+          
+
+          .form-group{'ng-class'=>"{true: 'has-success'}[form.password.$valid]"}
+            %label.col-md-4.control-label{'for'=>'inputPassword'}
+              Пароль
+            .col-md-6
+              %input#inputPassword.input-lg.form-control{'type'=>'password', 'placeholder'=>'Как минимум 6 символов',
+                                                         'ng-model' => 'user.password','required' => true, "ng-minlength" =>"6",
+                                                         'name' => 'password' }
+          
+          .form-group
+            %label.col-md-4.control-label
+              
+            .col-md-6.col-md-push-4
