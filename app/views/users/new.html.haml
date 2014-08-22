@@ -114,8 +114,8 @@
 
 
           .item
-            %img.img-responsive{"src" => "<%= asset_path ('image1.jpg') %>",'alt' => ""}
+            %img.img-responsive{"src" => "#{asset_path('image1.jpg')}",'alt' => ""}
           .item
-            %img.img-responsive{"src" =>"<%= asset_path ('vent.jpg') %>",'alt' => ""}
+            %img.img-responsive{"src" =>"#{asset_path('vent.jpg')}",'alt' => ""}
         %a.left.carousel-control{"href" => "#myCarousel", "data-slide" =>"prev"}
         %a.right.carousel-control{"href" => "#myCarousel", "data-slide" =>"next"}
