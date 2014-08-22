@@ -96,3 +96,44 @@ input.ng-valid.ng-dirty {
 }
 
 
+.animate-switch-container {
+  position:relative;
+  background:white;
+  overflow: hidden;
+  height:880px;
+  
+}
+
+.animate-switch {
+  padding:10px;
+}
+
+.animate-switch.ng-animate {
+  -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.9s;
+  transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.9s;
+  
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+}
+
+
+ 
+.animate-switch.ng-enter {
+  left: -1250px;
+}
+.animate-switch.ng-enter.ng-enter-active {
+  left: 0;
+}
+ 
+.animate-switch.ng-leave {
+ left: 0;
+}
+.animate-switch.ng-leave.ng-leave-active {
+  left:1250px;
+}
+img {
+  width: 1000px;
+  }

@@ -1,4 +1,4 @@
-leads = angular.module('leads', [])
+leads = angular.module('leads', ['ngAnimate'])
 
 leads.config [
   '$httpProvider'
@@ -37,6 +37,11 @@ leads.factory "Dater", [() ->
   
   ]
 leads.controller("CreateUserCtrl", ['$scope','Dater','$http', ($scope, Dater, $http) ->
+  $scope.tab = 0
+  $scope.isTab = () ->
+    return $scope.tab
+  $scope.addTab = () ->
+    $scope.tab = ($scope.tab + 1) % 3
   $scope.days = Dater.days
   $scope.months = Dater.create_months()
   $scope.years = Dater.years
