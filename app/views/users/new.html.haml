@@ -4,7 +4,12 @@
       %h1 Подожди... Твое счастье рядом
       %p 
         {{tab}}
-    .col-md-12.animate-switch-container{'ng-switch'=>'isTab()'}
+    .col-md-2.pull-right
+      %span.glyphicon.glyphicon-record{"ng-click" => 'setTab(0)', 'ng-class' => "{ activer: isTab(0) }"}
+      %span.glyphicon.glyphicon-record{"ng-click" => 'setTab(1)','ng-class' => '{ activer: isTab(1) }'}
+      %span.glyphicon.glyphicon-record{"ng-click" => 'setTab(2)','ng-class' => '{ activer: isTab(2) }'}
+    .col-md-12.animate-switch-container{'ng-switch'=>'getTab()'}
+      
       .col-md-12.animate-switch.center-block{"ng-switch-when"=>"0"}
         .col-md-3
           .row
@@ -113,7 +118,7 @@
 
 
       .col-md-12.animate-switch{"ng-switch-when"=>"1"}
-        %img.img-responsive{"src" => "/assets/image1.jpg",'alt' => ""}
+        %img.img-responsive{"src" => "#{asset_path 'image1.jpg'}",'alt' => ""}
       .col-md-12.animate-switch{"ng-switch-when"=>"2"}
         %ul
           %li
@@ -129,13 +134,14 @@
           %li
             %h3
               И ты просто продолжаешь ими пользоваться.
-        %img.img-responsive{"src" => "/assets/vent.jpg",'alt' => ""}
+        %img.img-responsive{"src" => "#{asset_path 'vent.jpg'}",'alt' => ""}
       .col-md-12.animate-switch{"ng-switch-when"=>"3"}
         %h1 
           Регистрация завершена
       %button.left.carousel-control{ "data-slide" =>"prev", 'ng-click' => 'addTab(0)'}
         
-      %button.right.carousel-control{"href" => "#myCarousel", "data-slide" =>"next", 'ng-click' => 'addTab(1)', "ng-hide" => 'isTab() === 3'}
+      %button.right.carousel-control{"href" => "#myCarousel", "data-slide" =>"next", 'ng-click' => 'addTab(1)', "ng-hide" => 'isTab(3)'}
+        А смысл?
         %span.glyphicon.glyphicon-circle-arrow-right
 
       

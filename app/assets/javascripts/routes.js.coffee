@@ -51,8 +51,12 @@ leads.controller("CreateUserCtrl", ['$scope','Dater','$http', ($scope, Dater, $h
  
 
   $scope.tab = 0
-  $scope.isTab = () ->
+  $scope.getTab = (tab) ->
     return $scope.tab
+  $scope.isTab = (tab) ->
+    return $scope.tab is tab
+  $scope.setTab = (tab) ->
+    $scope.tab = tab
   $scope.addTab = (num) ->
     if num is 0
       $scope.tab = mod(($scope.tab + 1), 3)
