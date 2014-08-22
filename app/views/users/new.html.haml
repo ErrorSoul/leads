@@ -1,7 +1,7 @@
 .container{"ng-controller" => 'CreateUserCtrl'}
   .row
     %header.col-md-12.center-block
-      %h1 Увеличь свои шансы на успех в поисках второй половинки.
+      %h1 Подожди... Твое счастье рядом
       %p 
         {{tab}}
     .col-md-12.animate-switch-container{'ng-switch'=>'isTab()'}
@@ -112,10 +112,30 @@
                     Давай!
 
 
-      .item.animate-switch{"ng-switch-when"=>"1"}
+      .col-md-12.animate-switch{"ng-switch-when"=>"1"}
         %img.img-responsive{"src" => "/assets/image1.jpg",'alt' => ""}
-      .item.animate-switch{"ng-switch-when"=>"2"}
+      .col-md-12.animate-switch{"ng-switch-when"=>"2"}
+        %ul
+          %li
+            %h3
+              Зарегистрируйся на одном сайте и получи доступ ко многим.
+
+             
+          %li
+            %h3
+              Ты выбираешь сам сайты, которые тебе нравятся
+
+              
+          %li
+            %h3
+              И ты просто продолжаешь ими пользоваться.
         %img.img-responsive{"src" => "/assets/vent.jpg",'alt' => ""}
-      %a.left.carousel-control{"href" => "#myCarousel", "data-slide" =>"prev", 'ng-click' => 'addTab()'}
-      %a.right.carousel-control{"href" => "#myCarousel", "data-slide" =>"next"}
+      .col-md-12.animate-switch{"ng-switch-when"=>"3"}
+        %h1 
+          Регистрация завершена
+      %button.left.carousel-control{ "data-slide" =>"prev", 'ng-click' => 'addTab(0)'}
+        
+      %button.right.carousel-control{"href" => "#myCarousel", "data-slide" =>"next", 'ng-click' => 'addTab(1)', "ng-hide" => 'isTab() === 3'}
+        %span.glyphicon.glyphicon-circle-arrow-right
+
       

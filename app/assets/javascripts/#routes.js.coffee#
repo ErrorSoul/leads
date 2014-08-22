@@ -64,8 +64,10 @@ leads.controller("CreateUserCtrl", ['$scope','Dater','$http', ($scope, Dater, $h
   $scope.countries = [{name: "USA", code: "46"}]
   $scope.user = {}
   $scope.EMAIL_REGEXP =  /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/
+
   $scope.showMessage = ->
           $scope.messages isnt undefined and $scope.messages.length >0
+
   $scope.login = () ->
     $scope.user.birthdate = Dater.create_utc_date($scope.user.date)
     $http.post('/users', user: $scope.user).success((data) ->
@@ -74,6 +76,7 @@ leads.controller("CreateUserCtrl", ['$scope','Dater','$http', ($scope, Dater, $h
           .error((error) ->
             console.log(error, "ERROR")
             $scope.y = "Error #{error}" )
+
   reg_complete = (message, reg_complete) ->
     if message[0] is reg_complete[0]
       $scope.messages = ""
