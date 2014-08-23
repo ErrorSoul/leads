@@ -2,12 +2,10 @@
   .row
     %header.col-md-12.center-block
       %h1 Подожди... Твое счастье рядом
-      %p 
-        {{tab}}
-    .col-md-2.pull-right
-      %span.glyphicon.glyphicon-record{"ng-click" => 'setTab(0)', 'ng-class' => "{ activer: isTab(0) }"}
-      %span.glyphicon.glyphicon-record{"ng-click" => 'setTab(1)','ng-class' => '{ activer: isTab(1) }'}
-      %span.glyphicon.glyphicon-record{"ng-click" => 'setTab(2)','ng-class' => '{ activer: isTab(2) }'}
+      
+    .pull-right
+      %span.glyphicon.glyphicon-record{'ng-repeat' => 'num in nums',"ng-click" => 'setTab(num)', 'ng-class' => "{ activer: isTab(num) }"}
+     
     .col-md-12.animate-switch-container{'ng-switch'=>'getTab()'}
       
       .col-md-12.animate-switch.center-block{"ng-switch-when"=>"0"}
@@ -138,10 +136,11 @@
       .col-md-12.animate-switch{"ng-switch-when"=>"3"}
         %h1 
           Регистрация завершена
+      
+
+      
       %button.left.carousel-control{ "data-slide" =>"prev", 'ng-click' => 'addTab(0)'}
         
       %button.right.carousel-control{"href" => "#myCarousel", "data-slide" =>"next", 'ng-click' => 'addTab(1)', "ng-hide" => 'isTab(3)'}
         А смысл?
         %span.glyphicon.glyphicon-circle-arrow-right
-
-      

@@ -7,14 +7,9 @@
 @import url(http://fonts.googleapis.com/css?family=Ubuntu&subset=cyrillic-ext,latin);
 @import url(http://fonts.googleapis.com/css?family=Comfortaa&subset=cyrillic-ext,latin);
 
-.b {
-  height: 7px;
-  width: 7px;
-  background-color: blue;
-  border-radius: 50%;
-  }
+
 .activer {
-  color: red;
+  color: $blue-border;
   }
 @mixin box-shadow($shadows...) {
   -moz-box-shadow: $shadows;
@@ -54,7 +49,7 @@ h1{
   }
 
 header {
-  height: 90px;
+  height: 80px;
   
   }
 .center-block {

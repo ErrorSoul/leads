@@ -67,6 +67,7 @@ leads.controller("CreateUserCtrl", ['$scope','Dater','$http', ($scope, Dater, $h
   $scope.years = Dater.years
   $scope.countries = [{name: "USA", code: "46"}]
   $scope.user = {}
+  $scope.nums = [0..2]
   $scope.EMAIL_REGEXP =  /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/
   $scope.showMessage = ->
           $scope.messages isnt undefined and $scope.messages.length >0
