@@ -8,7 +8,9 @@
 @import url(http://fonts.googleapis.com/css?family=Comfortaa&subset=cyrillic-ext,latin);
 
 
-
+.activer {
+  color: $blue-border;
+  }
 @mixin box-shadow($shadows...) {
   -moz-box-shadow: $shadows;
   -webkit-box-shadow: $shadows;
@@ -47,7 +49,7 @@ h1{
   }
 
 header {
-  height: 100px;
+  height: 80px;
   
   }
 .center-block {

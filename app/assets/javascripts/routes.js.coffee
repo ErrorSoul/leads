@@ -51,8 +51,12 @@ leads.controller("CreateUserCtrl", ['$scope','Dater','$http', ($scope, Dater, $h
  
 
   $scope.tab = 0
-  $scope.isTab = () ->
+  $scope.getTab = (tab) ->
     return $scope.tab
+  $scope.isTab = (tab) ->
+    return $scope.tab is tab
+  $scope.setTab = (tab) ->
+    $scope.tab = tab
   $scope.addTab = (num) ->
     if num is 0
       $scope.tab = mod(($scope.tab + 1), 3)
@@ -63,6 +67,7 @@ leads.controller("CreateUserCtrl", ['$scope','Dater','$http', ($scope, Dater, $h
   $scope.years = Dater.years
   $scope.countries = [{name: "USA", code: "46"}]
   $scope.user = {}
+  $scope.nums = [0..2]
   $scope.EMAIL_REGEXP =  /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/
   $scope.showMessage = ->
           $scope.messages isnt undefined and $scope.messages.length >0
