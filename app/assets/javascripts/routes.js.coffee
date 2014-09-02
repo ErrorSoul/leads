@@ -78,6 +78,7 @@ leads.controller("CreateUserCtrl", ['$scope','Dater','$http', ($scope, Dater, $h
       console.log(data))
           .error((error) ->
             console.log(error, "ERROR")
+            #add scope.message = "error #{error}"
             $scope.y = "Error #{error}" )
   reg_complete = (message, reg_complete) ->
     if message[0] is reg_complete[0]

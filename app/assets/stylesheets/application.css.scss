@@ -23,6 +23,8 @@
   margin-right: auto;
 }
 
+
+
 @mixin border-color($radius) {
   border-left: $radius solid $blue-border;
   border-bottom: $radius solid $blue-border;
@@ -139,4 +141,40 @@ input.ng-valid.ng-dirty {
 }
 img {
   width: 1000px;
+  }
+
+.animate-switch-container{
+ width: 100%;
+ background-color: $green;
+
+}
+
+body
+{
+overflow-y:hidden;
+
+}
+
+.control-label {
+  color: white;
+  }
+
+
+@-webkit-keyframes greenPulse {
+  from { background-color: #749a02; -webkit-box-shadow: 0 0 9px #333; }
+  50% { background-color: #91bd09; -webkit-box-shadow: 0 0 18px #91bd09; }
+  to { background-color: #749a02; -webkit-box-shadow: 0 0 9px #333; }
+}
+
+.radioactive {
+  color: white;
+  opacity : 1;
+  position: absolute;
+  right: 2%;
+  left: auto;
+  z-index: 1;
+  top:  5%;
+  -webkit-animation-name: greenPulse;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
   }
